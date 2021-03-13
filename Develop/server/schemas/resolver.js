@@ -12,7 +12,7 @@ const resolvers = {
         );
         return userData;
       }
-      throw new AuthenticationError("Not logged in");
+      throw new AuthenticationError("Please Log In");
     },
     users: async () => {
       return User.find().select("-__v -password");
@@ -49,7 +49,7 @@ const resolvers = {
         );
         return updatedUser;
       }
-      throw new AuthenticationError("You need to be logged in!");
+      throw new AuthenticationError("You need to sign in First!");
     },
     removeBook: async (parent, { bookId }, context) => {
       if (context.user) {
@@ -60,7 +60,7 @@ const resolvers = {
         );
         return updatedUser;
       }
-      throw new AuthenticationError("You need to be logged in!");
+      throw new AuthenticationError("You need to sign in First!");
     },
   },
 };

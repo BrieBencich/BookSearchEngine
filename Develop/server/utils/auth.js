@@ -1,7 +1,9 @@
 const jwt = require("jsonwebtoken");
 
-const secret = "mysecretsshhhhh";
+const secret = "mysecretsshhhhhhhhh";
 const expiration = "2h";
+
+
 module.exports = {
 
   authMiddleware: function ({ req }) {
@@ -24,7 +26,7 @@ module.exports = {
       console.log("Invalid token");
    
     }
-    // return updated request object back 
+  
     return req;
   },
   signToken: function ({ username, email, _id }) {
